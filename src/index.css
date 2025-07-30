@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --primary: 210 100% 60%; /* #389df9 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 90%; /* #ebf5fe */
+    --secondary-foreground: 210 20% 20%;
+
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: 210 100% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+
+    --primary: 222 100% 20%; /* #002370 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 10% 25%;
+    --secondary-foreground: 210 20% 95%;
+
+    --border: 210 10% 40%;
+    --input: 210 10% 40%;
+    --ring: 222 100% 20%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply font-sans;
+  }
+}
