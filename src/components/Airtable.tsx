@@ -2,7 +2,7 @@ import React from 'react';
 
 const Airtable: React.FC = () => {
   return (
-    <div className="w-full rounded-[16px] overflow-hidden border-[2px] border-[#002370] bg-[#EBF5FE]">
+    <div className="w-full rounded-[16px] overflow-hidden bg-[#EBF5FE]">
       <iframe
         className="w-full min-h-[1000px] md:min-h-[1200px]"
         src="https://airtable.com/embed/app5njLO852rBMkWj/pagr30Zr2DdZu8kXA/form"

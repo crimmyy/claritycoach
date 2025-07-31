@@ -9,13 +9,18 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
-import { Button } from '@/components/ui/button'
 
-const AirtableDrawer: React.FC = () => {
+interface AirtableDrawerProps {
+  trigger?: React.ReactNode
+}
+
+const AirtableDrawer: React.FC<AirtableDrawerProps> = ({ trigger }) => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button className="bg-primary text-white">Sign Up</Button>
+        {trigger || (
+          <button className="bg-primary text-white px-4 py-2 rounded-md">Sign Up</button>
+        )}
       </DrawerTrigger>
 
       <DrawerContent className="bg-[#EBF5FE]">
@@ -31,7 +36,7 @@ const AirtableDrawer: React.FC = () => {
             </DrawerDescription>
           </DrawerHeader>
 
-          <div className="p-4 pt-">
+          <div className="p-4">
             <div className="w-full rounded-[16px] overflow-hidden bg-[#EBF5FE]">
               <iframe
                 className="w-full min-h-[60vh] md:min-h-[70vh]"

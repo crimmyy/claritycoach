@@ -8,7 +8,8 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onWatchDemoClick }) => {
-  const handleWatchDemoClick = () => {
+  const handleWatchDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
     onWatchDemoClick?.()
     const videoSection = document.getElementById('video-section')
     if (videoSection) {
@@ -34,14 +35,25 @@ const Hero: React.FC<HeroProps> = ({ onWatchDemoClick }) => {
           </p>
 
           <div className="mt-4 flex gap-4 sm:mt-6">
-            <AirtableDrawer />
+          <AirtableDrawer
+  trigger={
+    <a
+      href="#"
+      className="inline-block rounded-[16px] border border-[#389DF9] bg-[#389DF9] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#2185d0]"
+    >
+      Sign Up
+    </a>
+  }
+/>
 
-            <button
+
+            <a
+              href="#"
               onClick={handleWatchDemoClick}
               className="inline-block rounded-[16px] border border-[#EBF5FE] bg-[#EBF5FE] px-5 py-3 font-medium text-[#389DF9] shadow-sm transition-colors hover:bg-[#dceefa]"
             >
               Watch Demo
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -50,3 +62,17 @@ const Hero: React.FC<HeroProps> = ({ onWatchDemoClick }) => {
 }
 
 export default Hero
+{/* <div className="mt-4 flex gap-4 sm:mt-6">
+<a
+  className="inline-block rounded-[16px] border border-[#389DF9] bg-[#389DF9] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#2185d0]"
+  href="#"
+>
+  Sign Up
+</a>
+
+<a
+  className="inline-block rounded-[16px] border border-[#EBF5FE] bg-[#EBF5FE] px-5 py-3 font-medium text-[#389DF9] shadow-sm transition-colors hover:bg-[#dceefa]"
+  href="#"
+>
+  Learn More
+</a> */}
