@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -41,5 +43,9 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     @apply font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
