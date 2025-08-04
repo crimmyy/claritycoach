@@ -40,16 +40,17 @@ const Video: React.FC<VideoProps> = ({ desktopSrc, mobileSrc, alt }) => {
       className="relative w-full max-w-4xl mx-auto cursor-pointer rounded-[16px] overflow-hidden"
       onClick={togglePlay}
     >
-      <video
-        ref={videoRef}
-        src={isMobile ? mobileSrc : desktopSrc}
-        className={`w-full h-auto transition-all duration-300 ${
-          isPlaying ? '' : 'filter blur-sm'
-        }`}
-        playsInline
-        muted
-        loop
-      />
+<video
+  ref={videoRef}
+  src={isMobile ? mobileSrc : desktopSrc}
+  className={`w-full max-h-[80vh] h-auto transition-all duration-300 ${
+    isPlaying ? '' : 'filter blur-sm'
+  }`}
+  playsInline
+  muted
+  loop
+/>
+
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-12 h-12 rounded-full bg-[#EBF5FE] flex items-center justify-center">

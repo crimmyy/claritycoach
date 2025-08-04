@@ -17,7 +17,7 @@ export default function LandingPage() {
       <div id="video-section">
         <Video
           key={autoplayKey}
-          desktopSrc="/videos/CC Desktop Demo Video.mp4"
+          desktopSrc="/videos/CC Mobile Demo Video.mp4"
           mobileSrc="/videos/CC Mobile Demo Video.mp4"
           alt="Intro Video"
           shouldAutoPlay
