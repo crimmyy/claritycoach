@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import AirtableDrawer from "@/components/shared/AirtableDrawer";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Drawer from "@/components/shared/Drawer";
 
 interface HeaderProps {
@@ -9,6 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false); // control drawer
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,7 +19,6 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Works on landing, or navigates there and uses a hash so our ScrollToHash helper can scroll
   const handleWatchDemoClick = () => {
     onWatchDemoClick?.();
     if (location.pathname === "/") {
@@ -40,37 +40,96 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
           {/* Left: Logo */}
           <Link className="block" to="/">
             <span className="sr-only">ClarityCoach Home</span>
-            <img src="/images/ClarityCoach_Logo.png" alt="ClarityCoach Logo" className="h-12" />
+            <img
+              src="/images/ClarityCoach_Logo.png"
+              alt="ClarityCoach Logo"
+              className="h-12"
+            />
           </Link>
 
           {/* Right: Nav + Buttons */}
           <div className="flex items-center gap-6">
+            {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
-              <Link to="/how-it-works" className="hover:text-primary">How It Works</Link>
-              <Link to="/use-cases" className="hover:text-primary">Use Cases</Link>
-              <Link to="/faq" className="hover:text-primary">FAQ</Link>
-              <Link to="/contact" className="hover:text-primary">Contact</Link>
+              <Link to="/how-it-works" className="hover:text-primary">
+                How It Works
+              </Link>
+              <Link to="/use-cases" className="hover:text-primary">
+                Use Cases
+              </Link>
+              <Link to="/faq" className="hover:text-primary">
+                FAQ
+              </Link>
+              <Link to="/contact" className="hover:text-primary">
+                Contact
+              </Link>
             </nav>
-            <div className="hidden sm:flex items-center gap-2">
-              {/* <button
-                className="rounded-xl bg-[#EBF5FE] px-5 py-2.5 text-sm font-medium text-[#389DF9]"
-                onClick={handleWatchDemoClick}
-              >
-                Watch Demo
-              </button> */}
 
-              {/* Default trigger uses brand blue; replace children later with the Airtable form */}
-              <Drawer />
+            {/* Desktop drawer button */}
+            <div className="hidden sm:flex items-center gap-2">
+              <Drawer open={drawerOpen} onOpenChange={setDrawerOpen} />
             </div>
 
-
-            {/* Mobile Menu Icon (placeholder) */}
+            {/* Mobile dropdown */}
             <div className="block md:hidden">
-              <button className="rounded-sm bg-secondary p-2 text-primary transition hover:opacity-75">
-                <svg xmlns="http://www.w3.org/2000/svg" className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-              </button>
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger asChild>
+                  <button className="rounded-sm bg-secondary p-2 text-primary transition hover:opacity-75">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="size-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                  </button>
+                </DropdownMenu.Trigger>
+
+                <DropdownMenu.Content
+                  className="bg-white shadow-md rounded-lg p-2 w-48"
+                  align="end"
+                >
+                  <DropdownMenu.Item asChild>
+                    <Link to="/how-it-works" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                      How It Works
+                    </Link>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <Link to="/use-cases" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                      Use Cases
+                    </Link>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <Link to="/faq" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                      FAQ
+                    </Link>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <Link to="/contact" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                      Contact
+                    </Link>
+                  </DropdownMenu.Item>
+
+                  <DropdownMenu.Separator className="my-2 h-px bg-gray-200" />
+
+                  <DropdownMenu.Item
+                    onSelect={(e) => {
+                      e.preventDefault();
+                      setDrawerOpen(true); // open drawer programmatically
+                    }}
+                    className="block px-3 py-2 rounded bg-[#389DF9] text-white text-center hover:bg-[#2d7cd0] cursor-pointer"
+                  >
+                    Get Started
+                  </DropdownMenu.Item>
+                </DropdownMenu.Content>
+              </DropdownMenu.Root>
             </div>
           </div>
         </div>

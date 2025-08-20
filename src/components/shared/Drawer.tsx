@@ -54,7 +54,13 @@ export default function Drawer({
 
   return (
     <ShadDrawer open={open} onOpenChange={onOpenChange}>
-      <DrawerTrigger asChild>{trigger ?? <DefaultTrigger />}</DrawerTrigger>
+      {/* only render a trigger if passed in */}
+      {trigger && <DrawerTrigger asChild>{trigger}</DrawerTrigger>}
+      {!trigger && !open && (
+        <DrawerTrigger asChild>
+          <DefaultTrigger />
+        </DrawerTrigger>
+      )}
 
       <DrawerContent
         className="p-0 border-0 sm:rounded-t-2xl flex flex-col"
@@ -118,7 +124,7 @@ export default function Drawer({
               ]}
             />
 
-            {/* Basic → segmented controls */}
+            {/* Basic */}
             <PricingCard
               title="Basic"
               price="$9.99"
@@ -148,7 +154,7 @@ export default function Drawer({
               ]}
             />
 
-            {/* Pro → segmented controls */}
+            {/* Pro */}
             <PricingCard
               title="Pro"
               price="$14.99"
