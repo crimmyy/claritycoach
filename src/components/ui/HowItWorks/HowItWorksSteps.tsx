@@ -30,7 +30,7 @@ export const HowItWorksStepsDefaults: Props = {
       image: { src: "/images/Step2.png", alt: "Step 2" },
       heading: "Step 2: Get Instant Coaching",
       description:
-        "Our AI analyzes visuals, audio, pacing, and delivery in seconds.",
+        "Clarity Coach analyzes visuals, audio, pacing, and delivery in seconds.",
     },
     {
       image: { src: "/images/Step3.png", alt: "Step 3" },
@@ -132,7 +132,7 @@ export const HowItWorksSteps = (props: HowItWorksStepsProps) => {
 
 
             <a
-              href="/use-cases"
+              href="/UseCases"
               className="inline-block rounded-[16px] border border-[#C8D0D8] bg-[#EBF5FE] px-5 py-3 text-sm sm:text-base font-medium text-black shadow-sm transition-colors hover:bg-[#dceefa]"
             >
               Learn More

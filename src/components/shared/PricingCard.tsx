@@ -10,6 +10,7 @@ type PricingCardProps = {
   highlightColor: string;
   features: string[];
   modalLinks: { label: string; url: string; value: string }[];
+  badgeText?: string;
 };
 
 export default function PricingCard({
@@ -19,10 +20,10 @@ export default function PricingCard({
   highlightColor,
   features,
   modalLinks,
+  badgeText,
 }: PricingCardProps) {
   const [selected, setSelected] = useState(modalLinks[0]?.value ?? "1");
 
-  // Map selected value to pricing
   const { currentPrice, currentOldPrice, checkoutUrl } = useMemo(() => {
     if (title === "Basic") {
       switch (selected) {
@@ -70,7 +71,6 @@ export default function PricingCard({
       }
     }
 
-    // Default fallback (Free or unknown)
     return {
       currentPrice: price,
       currentOldPrice: oldPrice,
@@ -79,7 +79,14 @@ export default function PricingCard({
   }, [selected, title, modalLinks, price, oldPrice]);
 
   return (
-    <div className="relative flex flex-col rounded-2xl border border-gray-50 bg-white/80 p-4 shadow-lg backdrop-blur-sm">
+    <div className="relative flex flex-col rounded-2xl border  border-gray-50 bg-white/80 p-4 shadow-lg backdrop-blur-sm">
+      {/* Badge */}
+      {badgeText && (
+        <span className="absolute -top-3 right-3 rounded-full bg-[#389DF9] px-3 py-1 text-xs font-semibold text-white shadow">
+          {badgeText}
+        </span>
+      )}
+
       {/* ToggleGroup */}
       {title !== "Freemium" && (
         <div className="absolute right-3 top-3 z-10">
@@ -128,7 +135,8 @@ export default function PricingCard({
           <span>
             {title === "Freemium" ? currentPrice : `$${currentPrice}`}
           </span>
-          {title !== "Freemium" && (
+          {/* Only show /mo on 1-month plans */}
+          {title !== "Freemium" && selected === "1" && (
             <span className="ml-1 text-sm md:text-lg font-normal">/mo</span>
           )}
         </h2>

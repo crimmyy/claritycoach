@@ -71,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({ onWatchDemoClick }) => {
             </h1>
 
             <p className="mt-8 text-base text-gray-700 sm:text-lg/relaxed">
-            Boost your view count, engagement, and audience retention by utilizing ClarityCoach’s AI-powered feedback reports to help you deliver your messages with confidence and clarity.
+            Boost your view count, engagement, and audience through AI-powered analysis and instant coaching reports.
             </p>
 
             <div className="mt-4 flex gap-4 sm:mt-6">

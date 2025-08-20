@@ -66,7 +66,8 @@ export default function Drawer({
         className="p-0 border-0 sm:rounded-t-2xl flex flex-col"
         style={{
           maxHeight: "80vh",
-          backgroundImage: `url('https://cdn.devdojo.com/images/september2021/mesh-bg.jpeg')`,
+          // backgroundImage: `url('https://cdn.devdojo.com/images/september2021/mesh-bg.jpeg')`,
+          backgroundColor: "#EBF5FE", // or whatever
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -96,7 +97,7 @@ export default function Drawer({
               className="mx-auto text-center text-xs md:text-sm font-medium max-w-2xl"
               style={{ color: HIGHLIGHT }}
             >
-              Includes <strong>2 week of early access</strong> to ClarityCoach
+              Includes <strong>2 weeks of early access</strong> to ClarityCoach
               before public launch. Secure your spot now! This offer is only
               available until launch or while spots last.
             </p>
@@ -136,7 +137,7 @@ export default function Drawer({
                 "2–6 tailored recommendations per video",
                 "In-depth hook analyzer",
                 "Brand consistency checker",
-                "Priority processing (short ads)",
+                "Priority processing",
               ]}
               modalLinks={[
                 {
@@ -160,7 +161,7 @@ export default function Drawer({
               price="$14.99"
               oldPrice="$24.99"
               highlightColor={HIGHLIGHT}
-              badgeText="BEST VALUE"
+              badgeText=""
               features={[
                 "Includes everything in Basic version",
                 "50 video analyses/mo (≤ 5 min each)",
@@ -187,11 +188,11 @@ export default function Drawer({
           </div>
 
           {/* Refund policy */}
-          <div className="mt-2 rounded-2xl bg-white/70 p-3 md:p-4 text-xs text-gray-800 ring-1 ring-gray-200">
+          <div className="mt-2 rounded-2xl bg-white/70 p-3 md:p-4 text-xs text-gray-800 ">
             <p>
               <strong>Refund policy:</strong> Customers may request a full
               refund at any time prior to the public launch of the app, which
-              occurs one week after the early access period begins.
+              occurs two weeks after the early access period begins.
             </p>
           </div>
 

@@ -49,7 +49,7 @@ export const FAQMainDefaults: Props = {
       title: "Are my videos and information kept private?",
       answer: (
         <p>
-          Yes, we take your privacy seriously. Your videos and information are used to provide tailored, actionable feedback and are never shared publicly.
+          Yes, we take your privacy seriously. Your videos and information are used to provide tailored, actionable feedback and are never shared publicly without your consent.
         </p>
       ),
     },
@@ -57,7 +57,7 @@ export const FAQMainDefaults: Props = {
       title: "How can I try ClarityCoach?",
       answer: (
         <p>
-          We’re targeting a launch in Fall 2025. Join the waitlist to be one of the first to get
+          Join the today with the "Get Started" to be one of the first to get
           access!
         </p>
       ),
@@ -81,10 +81,10 @@ export const FAQMain: React.FC<FAQMainProps> = (props) => {
     >
       <div className="container">
         {/* Intro */}
-        <div className="mb-12 w-full max-w-2xl md:mb-18 lg:mb-20">
+        <div className="mb-6 w-full max-w-2xl md:mb-8 lg:mb-12">
 
           {/* Secondary heading per your content */}
-          <h3 className="mt-8 text-2xl font-semibold md:text-5xl">{heading}</h3>
+          <h3 className=" text-2xl font-semibold md:text-5xl">{heading}</h3>
           <p className="mt-2 text-neutral-700 md:text-md">{description}</p>
         </div>
 
