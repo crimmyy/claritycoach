@@ -89,7 +89,7 @@ export const WhatYouGetDefaults: Props = {
         alt: "Holistic analysis icon",
       },
       heading: "Holistic video analysis",
-      description: "From visuals and sound to structure to accessibility.",
+      description: "From visuals and sound to structure and accessibility.",
     },
     {
       icon: {

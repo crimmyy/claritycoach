@@ -46,11 +46,10 @@ export const FAQMainDefaults: Props = {
       ),
     },
     {
-      title: "What if I already make great content!",
+      title: "Are my videos and information kept private?",
       answer: (
         <p>
-          That’s amazing! But even the best creators benefit from a second set of eyes. ClarityCoach
-          offers thoughtful, objective input to help you grow even further.
+          Yes, we take your privacy seriously. Your videos and information are used to provide tailored, actionable feedback and are never shared publicly.
         </p>
       ),
     },

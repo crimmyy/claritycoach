@@ -88,11 +88,11 @@ export default function Personas() {
     <>
       <PersonaSection
         heading="For Creators"
-        description="Make every video land with impact. Refine your message, sharpen your delivery, and captivate your audience."
+        description="Boost your view count, engagement, and audience retention by utilizing ClarityCoach’s AI-powered feedback reports to help you deliver your messages with confidence and clarity."
         scenarios={[
-          "Deliver your messages with confidence and clarity.",
-          "Collaborate with brands while keeping your authentic voice.",
-          "Refine short-form content to maximize retention and engagement.",
+          "Convert viewers into a loyal follower base through masterful storytelling.",
+          "Build a recognizable, unique brand to attract collaborations and sponsorships.",
+          "Increase confidence in every post by having a second set of eyes review your content before sharing publicly.",
         ]}
         image={{
           src: "/images/HeroPhoto5.jpg",
@@ -103,11 +103,11 @@ export default function Personas() {
 
       <PersonaSection
         heading="For Entrepreneurs"
-        description="Communicate your vision with confidence. Present ideas that inspire trust, secure funding, and drive action."
+        description="Building a strong online presence means creating trust, not just visibility. ClarityCoach helps you turn attention into lasting connections with holistic AI-powered video feedback."
         scenarios={[
-          "Pitch to investors with clarity and confidence in every second.",
-          "Share product demos that clearly convey value and benefits.",
-          "Post founder updates that strengthen community trust.",
+          "Post updates that grow your community and strengthen relationships.",
+          "Create product demos that resonate and convert customers.",
+          "Craft marketing videos that turn attention into action.",
         ]}
         image={{
           src: "/images/HeroPhoto3.jpg",
