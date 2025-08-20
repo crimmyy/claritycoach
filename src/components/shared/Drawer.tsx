@@ -65,7 +65,7 @@ export default function Drawer({
       <DrawerContent
         className="p-0 border-0 sm:rounded-t-2xl flex flex-col"
         style={{
-          maxHeight: "90vh",
+          maxHeight: "80vh",
           backgroundImage: `url('https://cdn.devdojo.com/images/september2021/mesh-bg.jpeg')`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",

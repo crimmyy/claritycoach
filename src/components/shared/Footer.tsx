@@ -16,10 +16,29 @@ const Footer: React.FC = () => {
         {/* Nav Links */}
         <nav className="mb-6">
           <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-            <li><a href="#" className="hover:text-[#389DF9] transition">How It Works</a></li>
-            <li><a href="#" className="hover:text-[#389DF9] transition">Use Cases</a></li>
-            <li><a href="#" className="hover:text-[#389DF9] transition">FAQ</a></li>
-            <li><a href="#" className="hover:text-[#389DF9] transition">Contact</a></li>
+            <li>
+              <a
+                href="/how-it-works"
+                className="hover:text-[#389DF9] transition"
+              >
+                How It Works
+              </a>
+            </li>
+            <li>
+              <a href="/use-cases" className="hover:text-[#389DF9] transition">
+                Use Cases
+              </a>
+            </li>
+            <li>
+              <a href="/faq" className="hover:text-[#389DF9] transition">
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-[#389DF9] transition">
+                Contact
+              </a>
+            </li>
           </ul>
         </nav>
 

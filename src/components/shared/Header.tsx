@@ -51,18 +51,10 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
           <div className="flex items-center gap-6">
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
-              <Link to="/how-it-works" className="hover:text-primary">
-                How It Works
-              </Link>
-              <Link to="/use-cases" className="hover:text-primary">
-                Use Cases
-              </Link>
-              <Link to="/faq" className="hover:text-primary">
-                FAQ
-              </Link>
-              <Link to="/contact" className="hover:text-primary">
-                Contact
-              </Link>
+              <Link to="/how-it-works">How It Works</Link>
+              <Link to="/use-cases">Use Cases</Link>
+              <Link to="/faq">FAQ</Link>
+              <Link to="/contact">Contact</Link>
             </nav>
 
             {/* Desktop drawer button */}
@@ -74,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
             <div className="block md:hidden">
               <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild>
-                  <button className="rounded-sm bg-secondary p-2 text-primary transition hover:opacity-75">
+                  <button className="rounded-sm bg-secondary p-2 text-primary transition focus:outline-none">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="size-5"
@@ -92,27 +84,34 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
                   </button>
                 </DropdownMenu.Trigger>
 
+                {/* With animations + shadow/outline */}
                 <DropdownMenu.Content
-                  className="bg-white shadow-md rounded-lg p-2 w-48"
+                  sideOffset={8}
+                  className={`
+                    bg-white rounded-lg w-48 p-2
+                    shadow-lg ring-1 ring-gray-200
+                    data-[state=open]:animate-slideDownAndFade
+                    data-[state=closed]:animate-slideUpAndFade
+                  `}
                   align="end"
                 >
                   <DropdownMenu.Item asChild>
-                    <Link to="/how-it-works" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                    <Link to="/how-it-works" className="block px-3 py-2 rounded">
                       How It Works
                     </Link>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <Link to="/use-cases" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                    <Link to="/use-cases" className="block px-3 py-2 rounded">
                       Use Cases
                     </Link>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <Link to="/faq" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                    <Link to="/faq" className="block px-3 py-2 rounded">
                       FAQ
                     </Link>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <Link to="/contact" className="block px-3 py-2 hover:bg-gray-100 rounded">
+                    <Link to="/contact" className="block px-3 py-2 rounded">
                       Contact
                     </Link>
                   </DropdownMenu.Item>
@@ -122,9 +121,9 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
                   <DropdownMenu.Item
                     onSelect={(e) => {
                       e.preventDefault();
-                      setDrawerOpen(true); // open drawer programmatically
+                      setDrawerOpen(true);
                     }}
-                    className="block px-3 py-2 rounded bg-[#389DF9] text-white text-center hover:bg-[#2d7cd0] cursor-pointer"
+                    className="block px-3 py-2 rounded-xl bg-[#389DF9] text-white text-center cursor-pointer"
                   >
                     Get Started
                   </DropdownMenu.Item>
