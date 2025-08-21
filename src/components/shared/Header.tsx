@@ -61,16 +61,7 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
 
             {/* Desktop drawer button */}
             <div className="hidden sm:flex items-center gap-2">
-              <Drawer
-                open={drawerOpen}
-                onOpenChange={(open) => {
-                  setDrawerOpen(open);
-                  if (!open) {
-                    // ✅ when drawer closes, also close dropdown
-                    setDropdownOpen(false);
-                  }
-                }}
-              />
+              <Drawer open={drawerOpen} onOpenChange={setDrawerOpen} />
             </div>
 
             {/* Mobile dropdown */}
@@ -78,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
               <DropdownMenu.Root
                 open={dropdownOpen}
                 onOpenChange={(open) => {
-                  // ✅ prevent auto-closing while drawer is open
+                  // ✅ prevent closing if drawer is open
                   if (!drawerOpen) {
                     setDropdownOpen(open);
                   }
@@ -140,7 +131,6 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
                     onSelect={(e) => {
                       e.preventDefault();
                       setDrawerOpen(true); // ✅ open drawer
-                      setDropdownOpen(true); // ✅ keep dropdown open while drawer active
                     }}
                     className="block px-3 py-2 rounded-xl bg-[#389DF9] text-white text-center cursor-pointer"
                   >
