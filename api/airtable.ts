@@ -16,17 +16,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Missing name or email" });
   }
 
+  const tableName = "Contact"; // 👈 replace this with the actual name of your Airtable table
+
   console.log("📩 Received form submission:", {
     fullName,
     email,
     message,
     base: process.env.AIRTABLE_BASE_ID,
-    table: process.env.AIRTABLE_TABLE_ID,
+    table: tableName,
   });
 
   try {
     const airtableRes = await fetch(
-      `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}`,
+      `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}`,
       {
         method: "POST",
         headers: {
