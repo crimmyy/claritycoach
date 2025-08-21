@@ -51,10 +51,10 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
           <div className="flex items-center gap-6">
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
-              <Link to="/how-it-works">How It Works</Link>
-              <Link to="/use-cases">Use Cases</Link>
-              <Link to="/faq">FAQ</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/HowItWorks">How It Works</Link>
+              <Link to="/UseCases">Use Cases</Link>
+              <Link to="/FAQ">FAQ</Link>
+              <Link to="/Contact">Contact</Link>
             </nav>
 
             {/* Desktop drawer button */}
@@ -96,22 +96,22 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
                   align="end"
                 >
                   <DropdownMenu.Item asChild>
-                    <Link to="/how-it-works" className="block px-3 py-2 rounded">
+                    <Link to="/HowItWorks" className="block px-3 py-2 rounded">
                       How It Works
                     </Link>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <Link to="/use-cases" className="block px-3 py-2 rounded">
+                    <Link to="/UseCases" className="block px-3 py-2 rounded">
                       Use Cases
                     </Link>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <Link to="/faq" className="block px-3 py-2 rounded">
+                    <Link to="/FAQ" className="block px-3 py-2 rounded">
                       FAQ
                     </Link>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <Link to="/contact" className="block px-3 py-2 rounded">
+                    <Link to="/Contact" className="block px-3 py-2 rounded">
                       Contact
                     </Link>
                   </DropdownMenu.Item>

@@ -78,8 +78,8 @@ export const ContactUs = (props: ContactUsProps) => {
         <p className="mb-8 text-base text-neutral-700 md:text-lg">{description}</p>
 
         {status === "success" ? (
-          <div className="rounded-lg bg-green-100 p-6 text-green-800 shadow">
-            ✅ Thanks for reaching out! We’ll read your message shortly.
+          <div className="rounded-lg bg-blue-200 p-6 text-blue-800 shadow">
+            Thanks for reaching out! We’ll read your message shortly.
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">

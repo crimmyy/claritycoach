@@ -18,22 +18,22 @@ const Footer: React.FC = () => {
         <nav className="mb-6">
           <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium">
             <li>
-              <Link to="/how-it-works" className="hover:text-[#389DF9] transition">
+              <Link to="/HowItWorks" className="hover:text-[#389DF9] transition">
                 How It Works
               </Link>
             </li>
             <li>
-              <Link to="/use-cases" className="hover:text-[#389DF9] transition">
+              <Link to="/UseCases" className="hover:text-[#389DF9] transition">
                 Use Cases
               </Link>
             </li>
             <li>
-              <Link to="/faq" className="hover:text-[#389DF9] transition">
+              <Link to="/FAQ" className="hover:text-[#389DF9] transition">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-[#389DF9] transition">
+              <Link to="/Contact" className="hover:text-[#389DF9] transition">
                 Contact
               </Link>
             </li>
