@@ -46,15 +46,6 @@ export default function Drawer({
 }: DrawerProps) {
   const scrollRef = React.useRef<HTMLDivElement>(null);
 
-  // 🔒 Ensure mobile dropdown (hamburger) is disabled while Drawer is open
-  React.useEffect(() => {
-    if (open) {
-      document.body.classList.add("disable-menu");
-    } else {
-      document.body.classList.remove("disable-menu");
-    }
-  }, [open]);
-
   React.useEffect(() => {
     if (open && scrollRef.current) {
       scrollRef.current.scrollTop = 0;
@@ -63,19 +54,20 @@ export default function Drawer({
 
   return (
     <ShadDrawer open={open} onOpenChange={onOpenChange}>
-      {/* Trigger (custom or default) */}
+      {/* only render a trigger if passed in */}
       {trigger && <DrawerTrigger asChild>{trigger}</DrawerTrigger>}
-      {!trigger && !open && (
-        <DrawerTrigger asChild>
-          <DefaultTrigger />
-        </DrawerTrigger>
-      )}
+{!trigger && (
+  <DrawerTrigger asChild>
+    <DefaultTrigger />
+  </DrawerTrigger>
+)}
+
 
       <DrawerContent
         className="p-0 border-0 sm:rounded-t-2xl flex flex-col"
         style={{
           maxHeight: "80vh",
-          backgroundColor: "#EBF5FE",
+          backgroundColor: "#EBF5FE", // background
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -169,6 +161,7 @@ export default function Drawer({
               price="$14.99"
               oldPrice="$24.99"
               highlightColor={HIGHLIGHT}
+              badgeText=""
               features={[
                 "Includes everything in Basic version",
                 "50 video analyses/mo (≤ 5 min each)",
@@ -195,7 +188,7 @@ export default function Drawer({
           </div>
 
           {/* Refund policy */}
-          <div className="mt-2 rounded-2xl bg-white/70 p-3 md:p-4 text-xs text-gray-800">
+          <div className="mt-2 rounded-2xl bg-white/70 p-3 md:p-4 text-xs text-gray-800 ">
             <p>
               <strong>Refund policy:</strong> Customers may request a full
               refund at any time prior to the public launch of the app, which

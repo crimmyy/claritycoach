@@ -10,6 +10,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -64,7 +66,15 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
 
             {/* Mobile dropdown */}
             <div className="block md:hidden">
-              <DropdownMenu.Root>
+              <DropdownMenu.Root
+                open={dropdownOpen}
+                onOpenChange={(open) => {
+                  // ✅ prevent closing if drawer is open
+                  if (!drawerOpen) {
+                    setDropdownOpen(open);
+                  }
+                }}
+              >
                 <DropdownMenu.Trigger asChild>
                   <button className="rounded-sm bg-secondary p-2 text-primary transition focus:outline-none">
                     <svg
@@ -120,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({ onWatchDemoClick }) => {
                   <DropdownMenu.Item
                     onSelect={(e) => {
                       e.preventDefault();
-                      setDrawerOpen(true);
+                      setDrawerOpen(true); // ✅ open drawer
                     }}
                     className="block px-3 py-2 rounded-xl bg-[#389DF9] text-white text-center cursor-pointer"
                   >
