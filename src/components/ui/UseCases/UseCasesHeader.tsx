@@ -11,7 +11,7 @@ export type UseCasesHeaderProps = React.ComponentPropsWithoutRef<"section"> & Pa
 export const UseCasesHeaderDefaults: Props = {
   heading: "ClarityCoach Works for Creators and Entrepreneurs",
   description:
-    "Upload your video and get tailored AI-powered feedback. Whether you're growing your audience or starting the next big thing.",
+    "Upload your video and get instant personalized feedback. Whether you're growing your audience or starting the next big thing.",
   image: {
     src: "/images/HowItWorksBgImage.png",
     alt: "Background showing people creating, teaching, and collaborating",

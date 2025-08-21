@@ -85,7 +85,7 @@ export const WhatYouGetDefaults: Props = {
     },
     {
       icon: {
-        src: "/images/WhatYouGet2.png",
+        src: "/images/WhatYouGet3.jpg",
         alt: "Holistic analysis icon",
       },
       heading: "Holistic video analysis",
@@ -93,7 +93,7 @@ export const WhatYouGetDefaults: Props = {
     },
     {
       icon: {
-        src: "/images/WhatYouGet3.jpg",
+        src: "/images/WhatYouGet2.png",
         alt: "Tailored recommendations icon",
       },
       heading: "Tailored recommendations",

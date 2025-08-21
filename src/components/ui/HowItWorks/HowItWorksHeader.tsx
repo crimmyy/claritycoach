@@ -10,7 +10,7 @@ export type HowItWorksHeaderProps = React.ComponentPropsWithoutRef<"section"> & 
 
 export const HowItWorksHeaderDefaults: Props = {
   heading: "How ClarityCoach Works",
-  description: "ClarityCoach gives you fast, AI-powered feedback so you can improve with every video.",
+  description: "ClarityCoach gives you instant personalized feedback so you can improve with every video.",
   image: { src: "/images/HowItWorksBgImage.png", alt: "Background showing creator working on video" },
 };
 

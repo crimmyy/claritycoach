@@ -88,7 +88,7 @@ export default function Personas() {
     <>
       <PersonaSection
         heading="For Creators"
-        description="Boost your view count, engagement, and audience retention by utilizing ClarityCoach’s AI-powered feedback reports to help you deliver your messages with confidence and clarity."
+        description="Boost your view count, engagement, and audience retention by utilizing ClarityCoach’s personalized feedback reports to help you deliver your messages with confidence and clarity."
         scenarios={[
           "Convert viewers into a loyal follower base through masterful storytelling.",
           "Build a recognizable, unique brand to attract collaborations and sponsorships.",
@@ -103,7 +103,7 @@ export default function Personas() {
 
       <PersonaSection
         heading="For Entrepreneurs"
-        description="Building a strong online presence means creating trust, not just visibility. ClarityCoach helps you turn attention into lasting connections with holistic AI-powered video feedback."
+        description="Building a strong online presence means creating trust, not just visibility. ClarityCoach helps you turn attention into lasting connections with holistic personalized video feedback."
         scenarios={[
           "Post updates that grow your community and strengthen relationships.",
           "Create product demos that resonate and convert customers.",
