@@ -22,9 +22,9 @@ const steps = [
   },
   {
     Icon: ImprovementIcon,
-    title: 'Step 3: See What to Improve',
+    title: 'Step 3: Get Instant Coaching',
     desc:
-      "You’ll get a personalized report with clear insights on what’s working and what to tweak.",
+      "You’ll get instant personalized feedback with clear insights on what’s working and what to tweak.",
   },
 ]
 
