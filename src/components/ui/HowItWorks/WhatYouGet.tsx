@@ -28,7 +28,7 @@ const WhatYouGet = (props: WhatYouGetProps) => {
   };
 
   return (
-    <section id="what-you-get" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="what-you-get" className="px-[4%] py-16 md:py-24 lg:py-28">
       <div className="container">
         {/* Heading */}
         <div className="max-w-3xl">
@@ -96,7 +96,7 @@ export const WhatYouGetDefaults: Props = {
         src: "/images/WhatYouGet2.png",
         alt: "Tailored recommendations icon",
       },
-      heading: "Tailored recommendations",
+      heading: "Personalized recommendations",
       description:
         "Reports are based on your visual and vocal presence in addition to your audience and goals.",
     },

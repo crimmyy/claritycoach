@@ -10,8 +10,13 @@ import "./index.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Theme accentColor="blue" radius="large">
-      <App />
-    </Theme>
+<Theme
+  accentColor="blue"
+  radius="large"
+  style={{ fontFamily: "Montserrat, ui-sans-serif, system-ui, sans-serif" }}
+>
+  <App />
+</Theme>
+
   </React.StrictMode>
 );

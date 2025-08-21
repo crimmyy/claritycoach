@@ -9,8 +9,8 @@ type Props = { heading: string; description: string; image: ImageProps };
 export type HowItWorksHeaderProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const HowItWorksHeaderDefaults: Props = {
-  heading: "How ClarityCoach Works",
-  description: "ClarityCoach gives you instant personalized feedback so you can improve with every video.",
+  heading: "How Clarity Coach Works",
+  description: "Clarity Coach gives you instant personalized feedback so you can improve with every video.",
   image: { src: "/images/HowItWorksBgImage.png", alt: "Background showing creator working on video" },
 };
 

@@ -35,7 +35,7 @@ export const HowItWorksStepsDefaults: Props = {
     },
     {
       image: { src: "/images/Step3.png", alt: "Step 3" },
-      heading: "Step 3: See What to Improve",
+      heading: "Step 3: Get Instant Coaching",
       description:
         "You'll get instant personalized feedback with clear insights on what's working and what to tweak.",
     },

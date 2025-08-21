@@ -20,6 +20,9 @@
     --ring: 210 100% 60%;
 
     --radius: 0.5rem;
+
+    /* ✅ Override Radix variable so its components inherit Montserrat */
+    --default-font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif !important;
   }
 
   .mask-top::before {
@@ -32,7 +35,7 @@
     background: linear-gradient(to bottom, white, transparent);
     z-index: 10;
   }
-  
+
   .mask-bottom::after {
     content: '';
     position: absolute;
@@ -43,7 +46,7 @@
     background: linear-gradient(to top, white, transparent);
     z-index: 10;
   }
-  
+
   .dark {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
