@@ -16,6 +16,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Missing name or email" });
   }
 
+  console.log("📩 Received form submission:", {
+    fullName,
+    email,
+    message,
+    base: process.env.AIRTABLE_BASE_ID,
+    table: process.env.AIRTABLE_TABLE_ID,
+  });
+
   try {
     const airtableRes = await fetch(
       `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}`,
@@ -38,11 +46,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const data = await airtableRes.json();
 
     if (!airtableRes.ok) {
+      console.error("❌ Airtable error:", data);
       return res.status(airtableRes.status).json({ error: data });
     }
 
+    console.log("✅ Airtable success:", data);
     res.status(200).json({ success: true, data });
   } catch (err: any) {
+    console.error("🔥 Server error:", err.message);
     res.status(500).json({ error: err.message });
   }
 }
