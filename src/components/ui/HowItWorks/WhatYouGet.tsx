@@ -85,7 +85,7 @@ export const WhatYouGetDefaults: Props = {
     },
     {
       icon: {
-        src: "/images/WhatYouGet2.jpg",
+        src: "/images/WhatYouGet2.png",
         alt: "Holistic analysis icon",
       },
       heading: "Holistic video analysis",
@@ -102,7 +102,7 @@ export const WhatYouGetDefaults: Props = {
     },
     {
       icon: {
-        src: "/images/WhatYouGet4.jpg",
+        src: "/images/WhatYouGet4.png",
         alt: "Grow with ClarityCoach icon",
       },
       heading: "Early growth advantage",

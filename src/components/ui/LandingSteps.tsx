@@ -16,9 +16,9 @@ const steps = [
   },
   {
     Icon: AnalyticsIcon,
-    title: 'Step 2: Get Instant Coaching',
+    title: 'Step 2: Fill Out the Questions',
     desc:
-      'Our AI analyzes how you or your product comes across on screen in seconds.',
+      'Answer a few quick questions about your video to help us understand your goals.',
   },
   {
     Icon: ImprovementIcon,

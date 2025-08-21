@@ -29,15 +29,15 @@ export const HowItWorksStepsDefaults: Props = {
     },
     {
       image: { src: "/images/Step2.png", alt: "Step 2" },
-      heading: "Step 2: Get Instant Coaching",
+      heading: "Step 2: Fill Out the Questions",
       description:
-        "Clarity Coach analyzes visuals, audio, pacing, and delivery in seconds.",
+        "Answer a few quick questions about your video to help us understand your goals.",
     },
     {
       image: { src: "/images/Step3.png", alt: "Step 3" },
       heading: "Step 3: See What to Improve",
       description:
-        "You'll get a personalized report with clear insights on what's working and what to tweak.",
+        "You'll get instant personalized feedback with clear insights on what's working and what to tweak.",
     },
   ],
 };

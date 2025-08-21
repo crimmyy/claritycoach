@@ -71,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({ onWatchDemoClick }) => {
             </h1>
 
             <p className="mt-8 text-base text-gray-700 sm:text-lg/relaxed">
-            Boost your view count, engagement, and audience through AI-powered analysis and instant coaching reports.
+            Boost your view count, engagement, and audience with instant personalized feedback and coaching reports.
             </p>
 
             <div className="mt-4 flex gap-4 sm:mt-6">
