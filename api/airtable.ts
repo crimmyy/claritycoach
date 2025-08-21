@@ -1,3 +1,4 @@
+// api/airtable.ts
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -5,7 +6,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { fullName, email } = req.body as { fullName: string; email: string };
+  const { fullName, email, message } = req.body as {
+    fullName: string;
+    email: string;
+    message?: string;
+  };
 
   if (!fullName || !email) {
     return res.status(400).json({ error: "Missing name or email" });
@@ -13,7 +18,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const airtableRes = await fetch(
-      `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Signups`,
+      `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE_ID}`,
       {
         method: "POST",
         headers: {
@@ -22,8 +27,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         },
         body: JSON.stringify({
           fields: {
-            Name: fullName,
-            Email: email,
+            "Full Name": fullName,
+            "Email Address": email,
+            "Comment / Question": message || "",
           },
         }),
       }

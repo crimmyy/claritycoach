@@ -12,7 +12,7 @@ export default function UseCases() {
         <UseCasesHeader />
         <Personas />
       </main>
-      <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" />
+      {/* <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" /> */}
       <Footer />
     </>
   );

@@ -26,7 +26,7 @@ export default function LandingPage() {
       {/* ✅ Drop Testimonials here */}
       <Testimonials />
 
-      <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" />
+      {/* <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" /> */}
 
       <Footer />
     </div>

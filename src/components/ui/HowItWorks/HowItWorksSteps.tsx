@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ React Router for navigation
 import Drawer from "@/components/shared/Drawer";
 import AirtableDrawer from "@/components/shared/AirtableDrawer";
 
@@ -67,13 +68,13 @@ export const HowItWorksSteps = (props: HowItWorksStepsProps) => {
   return (
     <section
       id="how-it-works-steps"
-      className={`bg-[#EBF5FE] px-[5%] py-8 md:py-8 lg:py-16 ${className}`} // reduced top/bottom padding
+      className={`bg-[#EBF5FE] px-[5%] py-8 md:py-8 lg:py-16 ${className}`}
       {...rest}
     >
       <div className="container">
         <div className="flex flex-col items-center">
           {/* Header */}
-          <div className="mb-8 text-center"> {/* reduced spacing */}
+          <div className="mb-8 text-center">
             <div className="w-full max-w-2xl">
               {tagline && (
                 <p className="mb-2 font-semibold text-slate-700 md:mb-3">
@@ -89,7 +90,7 @@ export const HowItWorksSteps = (props: HowItWorksStepsProps) => {
             </div>
           </div>
 
-          {/* Steps Grid with animations */}
+          {/* Steps Grid */}
           <motion.div
             className="grid w-full grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-14 lg:gap-x-12"
             variants={containerVariants}
@@ -103,7 +104,7 @@ export const HowItWorksSteps = (props: HowItWorksStepsProps) => {
                 variants={itemVariants}
                 className="flex h-full flex-col items-center text-center"
               >
-                <div className="h-auto w-[20rem] rounded-lg overflow-hidden mb-6"> {/* added bottom margin */}
+                <div className="h-auto w-[20rem] rounded-lg overflow-hidden mb-6">
                   <img
                     src={section.image.src}
                     alt={section.image.alt ?? ""}
@@ -112,7 +113,7 @@ export const HowItWorksSteps = (props: HowItWorksStepsProps) => {
                   />
                 </div>
 
-                <h3 className="mb-3 text-2xl mt-6 font-semibold md:mb-4 md:text-3xl md:leading-[1.3]"> {/* reduced margin */}
+                <h3 className="mb-3 text-2xl mt-6 font-semibold md:mb-4 md:text-3xl md:leading-[1.3]">
                   {section.heading}
                 </h3>
                 <p className="max-w-md text-slate-700">{section.description}</p>
@@ -122,21 +123,21 @@ export const HowItWorksSteps = (props: HowItWorksStepsProps) => {
 
           {/* CTA Buttons */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-3 md:mt-16 lg:mt-20">
-          <Drawer
-  trigger={
-    <button className="px-6 py-2.5 rounded-[16px] bg-[#389DF9] text-white">
-      Get Started
-    </button>
-  }
-/>
+            <Drawer
+              trigger={
+                <button className="px-6 py-2.5 rounded-[16px] bg-[#389DF9] text-white">
+                  Get Started
+                </button>
+              }
+            />
 
-
-            <a
-              href="/UseCases"
+            {/* ✅ React Router navigation */}
+            <Link
+              to="/use-cases"
               className="inline-block rounded-[16px] border border-[#C8D0D8] bg-[#EBF5FE] px-5 py-3 text-sm sm:text-base font-medium text-black shadow-sm transition-colors hover:bg-[#dceefa]"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>

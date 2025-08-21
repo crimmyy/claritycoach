@@ -49,16 +49,39 @@ export const ContactUs = (props: ContactUsProps) => {
     messageInput.trim().length > 0 &&
     acceptTerms === true;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (acceptTerms !== true) {
-      setTermsError("Please accept the Terms to continue.");
-      return;
-    }
-    setTermsError("");
-    // TODO: hook to backend / Airtable
-    console.log({ nameInput, emailInput, messageInput, acceptTerms });
-  };
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+    
+      if (acceptTerms !== true) {
+        setTermsError("Please accept the Terms to continue.");
+        return;
+      }
+      setTermsError("");
+    
+      try {
+        const res = await fetch("/api/airtable", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName: nameInput,
+            email: emailInput,
+            message: messageInput,
+          }),
+        });
+    
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Something went wrong");
+    
+        alert("✅ Submitted successfully!");
+        setNameInput("");
+        setEmailInput("");
+        setMessageInput("");
+        setAcceptTerms(false);
+      } catch (err: any) {
+        alert("❌ Error: " + err.message);
+      }
+    };
+    
 
   return (
     <section
@@ -119,24 +142,6 @@ export const ContactUs = (props: ContactUsProps) => {
               className="min-h-[10rem] w-full rounded-none border-0 border-b border-neutral-400 bg-transparent px-0 py-2 text-black placeholder:text-neutral-500 focus:border-black focus:ring-0"
             />
           </div>
-          {/* Terms Checkbox */}
-{/* <div className="flex items-center gap-2">
-  <Checkbox
-    id="terms"
-    checked={acceptTerms}
-    onCheckedChange={(val) => {
-      const v = val === true;            // normalize to boolean
-      setAcceptTerms(v as true | false); // keep your state type happy
-      if (v) setTermsError("");
-    }}
-  />
-  <Label htmlFor="terms" className="cursor-pointer text-sm text-neutral-800">
-    I accept the{" "}
-    <a className="underline" href="/terms" target="_blank" rel="noopener noreferrer">
-      Terms and Conditions
-    </a>
-  </Label>
-</div> */}
 {termsError && <p className="text-xs text-red-600">{termsError}</p>}
 
 {/* Submit Button */}

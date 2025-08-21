@@ -19,7 +19,7 @@ export default function HowItWorks() {
         mobileSrc="/videos/CC Mobile Demo Video.mp4"
       /> */}
       </main>
-      <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" />
+      {/* <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" /> */}
       <Footer />
     </>
   );

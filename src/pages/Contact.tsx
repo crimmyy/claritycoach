@@ -7,7 +7,7 @@ export default function Contact() {
     <>
       <Header />
         <ContactUs />
-      <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" />
+      {/* <Cta {...CtaDefaults} heading="Get Started with ClarityCoach Today" /> */}
       <Footer />
     </>
   );
